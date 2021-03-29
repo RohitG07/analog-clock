@@ -1,0 +1,139 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-color: #000;
+  --secondary-color: #fff;
+}
+
+html {
+  transition: all 0.65s ease-in;
+}
+
+html.dark {
+  --primary-color: #fff;
+  --secondary-color: rgb(31, 31, 31);
+}
+
+html.dark {
+  color: var(--primary-color);
+  background-color: #111;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Noto Sans KR", sans-serif;
+  overflow: hidden;
+}
+
+.toggle {
+  border: none;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding: .6rem .95rem;
+  font-size: .9rem;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  top: 6rem;
+}
+
+.toggle:focus {
+  outline: none;
+}
+
+.toggle:active {
+  transform: scale(.98);
+}
+
+.clock-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.clock-container .time {
+  font-size: 4rem;
+  font-weight: lighter;
+}
+
+.clock-container .date {
+  color: rgb(153, 153, 153);
+  text-transform: uppercase;
+  font-size: .9rem;
+  letter-spacing: .55px;
+}
+
+.clock-container .date .circle {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border-radius: 50%;
+  height: 1.5rem;
+  width: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.65s ease-in-out;
+  font-size: .85rem;
+}
+
+.clock {
+  position: relative;
+  width: 240px;
+  height: 240px;
+}
+
+.needle {
+  background-color: var(--primary-color);
+  position: absolute;
+  width: 3px;
+  height: 70px;
+  top: 50%;
+  left: 50%; 
+  transform-origin: bottom center;
+}
+
+.needle.hour {
+  transform: translate(-50%, -100%) rotate(0deg);
+}
+
+.needle.minute {
+  transform: translate(-50%, -100%) rotate(0deg);
+  height: 102px;
+}
+
+.needle.second {
+  transform: translate(-50%, -100%) rotate(0deg);
+  height: 110px;
+  background-color: #41cfd6;
+}
+
+.center-point {
+  height: 12px;
+  width: 12px;
+  background-color: #41cfd6;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.center-point::after {
+  content: "";
+  height: 6px;
+  width: 6px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
