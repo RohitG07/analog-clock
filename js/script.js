@@ -38,7 +38,7 @@ function setDateTime() {
   timeEl.textContent = curTime;
   dateEl.textContent = curDate;
 
-  hourNeedle.style.transform = `translate(-50%, -100%) rotate(${scale(hoursFormatted, 0, 11, 0, 360)}deg)`;
+  hourNeedle.style.transform = `translate(-50%, -100%) rotate(${scale(hoursFormatted, 0, 12, 0, 360)}deg)`;
   minuteNeedle.style.transform = `translate(-50%, -100%) rotate(${scale(minutes, 0, 59, 0, 360)}deg)`;
   secondNeedle.style.transform = `translate(-50%, -100%) rotate(${scale(seconds, 0, 60, 0, 360)}deg)`;
 }
